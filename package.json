@@ -1,0 +1,41 @@
+{
+  "name": "game-library",
+  "version": "1.0.0",
+  "description": "A simple game library app.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Nama Anda",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "lowdb": "^7.0.1",
+    "sudo-prompt": "^9.2.1"
+  },
+  "build": {
+    "appId": "irazawa.com",
+    "productName": "Game Library",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "style.css",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

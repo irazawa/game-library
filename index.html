@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <!-- Content Security Policy untuk keamanan, mengizinkan gambar dari protokol kustom 'app-file:' -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; img-src 'self' app-file:;">
+    <title>Game Library</title>
+    <!-- Menghubungkan ke file CSS untuk styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER: Berisi daftar game yang bisa di-scroll -->
+    <header id="game-list-container">
+        <div id="game-list">
+            <!-- Item game akan ditambahkan di sini secara dinamis oleh renderer.js -->
+        </div>
+    </header>
+
+    <!-- MAIN: Berisi banner besar untuk game yang dipilih -->
+    <main id="game-banner">
+        <div class="banner-overlay">
+            <h1 id="game-title">Pilih Game</h1>
+            <button id="play-btn" class="hidden">PLAY</button>
+        </div>
+    </main>
+
+    <!-- Tombol kontrol di pojok kanan atas -->
+    <div class="controls-container">
+        <button id="settings-btn" title="Tambah Game Baru">➕</button>
+        <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+    </div>
+
+    <!-- MODAL: Pop-up untuk menambah dan mengedit game (awalnya tersembunyi) -->
+    <div id="form-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">&times;</button>
+            <h2 id="modal-title">Tambah Game Baru</h2>
+            <form id="game-form">
+                <!-- Input tersembunyi untuk menyimpan ID game saat mode edit -->
+                <input type="hidden" id="edit-game-id">
+                
+                <div class="form-group">
+                    <label for="game-name">Nama Game:</label>
+                    <input type="text" id="game-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Path Ikon Game:</label>
+                    <div class="file-input-group">
+                        <input type="text" id="icon-path" readonly required placeholder="Pilih file ikon...">
+                        <button type="button" class="select-file-btn" data-target="icon-path" data-type="image">Pilih File</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Path Banner Game:</label>
+                    <div class="file-input-group">
+                        <input type="text" id="banner-path" readonly required placeholder="Pilih file banner...">
+                        <button type="button" class="select-file-btn" data-target="banner-path" data-type="image">Pilih File</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Path Executable (.exe):</label>
+                    <div class="file-input-group">
+                        <input type="text" id="exe-path" readonly required placeholder="Pilih file .exe...">
+                        <button type="button" class="select-file-btn" data-target="exe-path" data-type="exe">Pilih File</button>
+                    </div>
+                </div>
+                <button type="submit" id="submit-btn" class="submit-btn">Simpan Game</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Menghubungkan ke file JavaScript untuk logika frontend -->
+    <script src="./renderer.js"></script>
+</body>
+</html>
