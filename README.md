@@ -2,9 +2,6 @@
 
 Sebuah aplikasi desktop sederhana untuk mengelola dan meluncurkan koleksi game PC Anda. Dibuat dengan Electron.js, aplikasi ini menawarkan antarmuka yang bersih dan modern, terinspirasi dari pengalaman konsol game.
 
-![Screenshot Aplikasi](httpsg/assets/screenshot.png)
-_(Tips: Ganti gambar di atas dengan screenshot aplikasi Anda sendiri! Simpan screenshot dengan nama `screenshot.png` di dalam folder `assets`)_
-
 ---
 
 ## ✨ Fitur Utama
