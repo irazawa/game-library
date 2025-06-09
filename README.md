@@ -36,7 +36,7 @@ Jika Anda ingin menjalankan proyek ini dari kode sumbernya, ikuti langkah-langka
 1.  **Clone repositori ini:**
 
     ```bash
-    git clone [[https://github.com/username/repo-name.git](https://github.com/username/repo-name.git)](https://github.com/irazawa/game-library.git)
+    git clone https://github.com/irazawa/game-library.git
     cd repo-name
     ```
 
